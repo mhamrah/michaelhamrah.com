@@ -6,4 +6,16 @@ declare namespace App {
 	// interface Platform {}
 	// interface PrivateEnv {}
 	// interface PublicEnv {}
+
+
+	interface Platform {
+		env: {
+			COUNTER: DurableObjectNamespace;
+		};
+		context: {
+			waitUntil(promise: Promise<any>): void;
+		};
+		caches: CacheStorage & { default: Cache }
+	}
+
 }
